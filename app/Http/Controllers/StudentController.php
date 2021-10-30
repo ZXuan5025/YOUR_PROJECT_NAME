@@ -84,7 +84,7 @@ class StudentController extends Controller
             $_SESSION["ic"] = $ic; 
         DB::table('students')->insert($data);
         echo "<script>alert('Sign up successfully.');";
-            echo 'window.location= "signin"';
+            echo 'window.location= "signin/"';
             echo '</script>';
         }
         else{
