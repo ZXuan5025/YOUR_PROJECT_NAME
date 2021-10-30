@@ -1,7 +1,10 @@
 <?php
+// Initialize the session
 session_start();
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: /home");
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["signin"]) || $_SESSION["signin"] !== true){
+    header("location: /signin");
     exit;
 }
 ?>
