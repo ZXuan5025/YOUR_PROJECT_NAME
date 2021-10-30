@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use DB;
 use App\Models\Student;
-use Session;
-use Crypt;
 
 
 class StudentController extends Controller
@@ -56,7 +54,6 @@ class StudentController extends Controller
     {
         return view('student.contact');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -87,12 +84,12 @@ class StudentController extends Controller
             $_SESSION["ic"] = $ic; 
         DB::table('students')->insert($data);
         echo "<script>alert('Sign up successfully.');";
-            echo 'window.location= "/signin"';
+            echo 'window.location= "signin"';
             echo '</script>';
         }
         else{
             echo "<script>alert('Password must match with confirm password.');";
-            echo 'window.location= "/register"';
+            echo 'window.location= "register/"';
             echo '</script>';
         }
         }

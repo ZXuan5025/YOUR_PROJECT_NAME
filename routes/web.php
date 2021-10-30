@@ -27,7 +27,7 @@ Route::any('home/', [StudentController::class,'home']);
 //Route::post('signin/', [StudentController::class,'store']);
 
 Route::any('/','App\Http\Controllers\StudentController@accept');
-Route::post('signin/','App\Http\Controllers\StudentController@store');
+Route::any('register/','App\Http\Controllers\StudentController@store');
 
 Route::get('signin',function(){
     return view('student.signin');
